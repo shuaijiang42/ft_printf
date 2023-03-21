@@ -6,7 +6,7 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 13:24:48 by shujiang          #+#    #+#             */
-/*   Updated: 2023/03/21 16:28:28 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/03/21 16:50:20 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	ft_print_str(char *str)
 		return (write (1, str, ft_strlen(str)));
 }
 
-void ft_print_int(int n, int *print_len)
+void	ft_print_int(int n, int *print_len)
 {
 	char	c;
 

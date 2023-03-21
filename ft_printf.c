@@ -6,13 +6,13 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 10:30:36 by shujiang          #+#    #+#             */
-/*   Updated: 2023/03/21 16:39:58 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/03/21 16:48:01 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_print_unsigned_int(unsigned int n, int base, 
+void	ft_print_unsigned_int(unsigned int n, int base,
 		int flag, int *print_len)
 {
 	static char	str[23] = "0123456789abcdefABCDEF";
@@ -30,12 +30,12 @@ void	ft_print_unsigned_int(unsigned int n, int base,
 	}
 }
 
-void ft_print_unsigned_long(unsigned long n, int *print_len)
+void	ft_print_unsigned_long(unsigned long n, int *print_len)
 {
-	static char str[17]="0123456789abcdef";
+	static char	str[17] = "0123456789abcdef";
 
 	if (n < 16)
-		*print_len += write (1, &str[n], 1);	
+		*print_len += write (1, &str[n], 1);
 	else
 	{
 		ft_print_unsigned_long(n / 16, print_len);
@@ -43,18 +43,18 @@ void ft_print_unsigned_long(unsigned long n, int *print_len)
 	}
 }
 
-void ft_print_ptr(void *ptr, int *print_len)
+void	ft_print_ptr(void *ptr, int *print_len)
 {
-	unsigned long ptr_value;
-	
+	unsigned long	ptr_value;
+
 	ptr_value = (unsigned long)ptr;
 	*print_len += ft_print_str("0x");
 	ft_print_unsigned_long(ptr_value, print_len);
-} 
+}
 
-int ft_format(va_list args, const char place_holder)
+int	ft_format(va_list args, const char place_holder)
 {
-	int print_len;
+	int	print_len;
 
 	print_len = 0;
 	if (place_holder == 'c')
@@ -71,14 +71,14 @@ int ft_format(va_list args, const char place_holder)
 		ft_print_unsigned_int(va_arg(args, unsigned int), 16, 0, &print_len);
 	if (place_holder == 'X')
 		ft_print_unsigned_int(va_arg(args, unsigned int), 16, 1, &print_len);
-	return(print_len);
+	return (print_len);
 }
 
-int ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
-	va_list args;
-	int i;
-	int print_len;
+	va_list	args;
+	int		i;
+	int		print_len;
 
 	i = 0;
 	print_len = 0;
@@ -91,11 +91,11 @@ int ft_printf(const char *str, ...)
 			if (str[i] == '%')
 				print_len += ft_print_char('%');
 			else
-				print_len += ft_format(args, str[i]);	
+				print_len += ft_format(args, str[i]);
 		}
 		else
 			print_len += write(1, &str[i], 1);
-		i++; 
+		i++;
 	}
 	va_end(args);
 	return (print_len);
