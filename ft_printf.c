@@ -6,7 +6,7 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 10:30:36 by shujiang          #+#    #+#             */
-/*   Updated: 2023/03/21 16:48:01 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/03/22 10:12:51 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_print_unsigned_int(unsigned int n, int base,
 		int flag, int *print_len)
 {
-	static char	str[23] = "0123456789abcdefABCDEF";
+	static const char	str[23] = "0123456789abcdefABCDEF";
 
 	if ((long long) n < (long long) base)
 	{
@@ -32,7 +32,7 @@ void	ft_print_unsigned_int(unsigned int n, int base,
 
 void	ft_print_unsigned_long(unsigned long n, int *print_len)
 {
-	static char	str[17] = "0123456789abcdef";
+	static const char	str[17] = "0123456789abcdef";
 
 	if (n < 16)
 		*print_len += write (1, &str[n], 1);

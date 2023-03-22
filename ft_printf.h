@@ -6,12 +6,13 @@
 /*   By: shujiang <shujiang@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 13:27:57 by shujiang          #+#    #+#             */
-/*   Updated: 2023/03/21 16:56:16 by shujiang         ###   ########.fr       */
+/*   Updated: 2023/03/22 10:31:28 by shujiang         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
+//# define BASE16 "0123456789abcdefABCDEF" insted of using static const char, I can define this set of char here.
 
 # include <stdarg.h>
 # include <unistd.h>

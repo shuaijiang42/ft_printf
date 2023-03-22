@@ -15,7 +15,7 @@ all: $(NAME)
 $(NAME): $(OBJECTS)
 	ar rcs $(NAME) $(OBJECTS)
 
-# creat the static library ar: archive r: replace c: creat s: index; so this command creates or update
+# create the static library ar: archive r: replace c: creat s: index; so this command creates or update
 
 # bonus: $(BONUS_OBJECTS)
 # 	ar rcs $(NAME) $(BONUS_OBJECTS)
